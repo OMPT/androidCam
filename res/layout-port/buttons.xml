@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+              <!--android:background="@xml/record_draw"-->
+          
+          <TextView
+		      android:id="@+id/textView_timer"
+		      android:layout_width="wrap_content"
+		      android:layout_height="wrap_content"
+              android:layout_toRightOf="@+id/textView_rec"
+		      android:textColor="#FF0000" />
+
+          <TextView
+              android:id="@+id/textView_rec"
+              android:layout_width="30dp"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="5dp"
+              android:textColor="#FF0000" />
+
+          <Button
+              android:id="@+id/button_focus"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignBaseline="@+id/button_camera"
+              android:layout_alignBottom="@+id/button_camera"
+              android:layout_alignParentLeft="true"
+              android:onClick="focusClicked"
+              android:text="  AF  "
+              android:visibility="invisible" />
+
+          <Button
+              android:id="@+id/button_light"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentBottom="true"
+              android:layout_alignParentRight="true"
+              android:onClick="lightClicked"
+              android:text="Light" />
+
+          <Button
+              android:id="@+id/button_camera"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_above="@+id/button_light"
+              android:layout_alignParentRight="true"
+              android:onClick="camClicked"
+              android:text="Cam" />
+
+          <Button
+              android:id="@+id/button_record"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentBottom="true"
+              android:layout_centerHorizontal="true"
+              android:onClick="recordClicked"
+              android:text=" Rec " />
+
+          <Button
+              android:id="@+id/button_view"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentLeft="true"
+              android:layout_below="@+id/textView_timer"
+              android:onClick="viewClicked"
+              android:text="View" />
+ 
+</RelativeLayout>
