@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+ 
+          <Button
+              android:id="@+id/button_record"   
+              android:layout_width="70dp"
+              android:layout_height="70dp"
+              android:layout_alignParentRight="true"
+              android:layout_centerVertical="true"
+              android:onClick="recordClicked"
+              android:text="Rec" />
+              <!--android:background="@xml/record_draw"-->
+
+          <Button
+              android:id="@+id/button_view"
+              android:layout_width="60dp"
+              android:layout_height="50dp"
+              android:layout_alignParentLeft="true"
+              android:layout_alignParentBottom="true"
+              android:onClick="viewClicked"
+              android:text="View" />
+
+          <Button
+              android:id="@+id/button_focus"
+              android:layout_width="60dp"
+              android:layout_height="50dp"
+              android:layout_alignParentLeft="true"
+              android:layout_centerVertical="true"
+              android:visibility="invisible"
+              android:onClick="focusClicked"
+              android:text="AF" />
+          
+          <Button
+              android:id="@+id/button_light"
+              android:layout_width="60dp"
+              android:layout_height="50dp"
+              android:layout_alignParentRight="true"
+              android:layout_alignParentTop="true"
+              android:onClick="lightClicked"
+              android:text="Light" />
+          
+          <Button
+              android:id="@+id/button_camera"
+              android:layout_width="60dp"
+              android:layout_height="50dp"
+              android:layout_toLeftOf="@+id/button_light"
+              android:onClick="camClicked"
+              android:text="Cam" />
+          
+          <Button
+              android:id="@+id/button_settings"
+              android:layout_width="50dp"
+              android:layout_height="50dp"
+              android:layout_alignParentRight="true"
+              android:layout_alignParentBottom="true"
+		      android:onClick="settingsClicked"
+              android:text="..." />
+          
+          <Button
+              android:id="@+id/button_storage"
+	          android:layout_width="wrap_content"
+	          android:layout_height="wrap_content"
+              android:layout_toLeftOf="@+id/button_settings"
+              android:layout_alignParentBottom="true"
+              android:visibility="invisible"
+		      android:onClick="storageClicked"
+              android:text="Storage Options" />
+          
+	      <RadioGroup
+	          android:id="@+id/radiogroup_settings"
+	          android:layout_width="wrap_content"
+	          android:layout_height="wrap_content"
+              android:layout_toLeftOf="@+id/button_settings"
+              android:layout_alignParentBottom="true"
+              android:visibility="invisible"
+	          android:orientation="vertical">
+	          <TextView
+	              android:id="@+id/textview_settings"
+	              android:layout_width="wrap_content"
+	              android:layout_height="wrap_content"
+	              android:text="Does Nothing" />
+	          <RadioButton
+	              android:id="@+id/radio_sd"
+	              android:layout_width="wrap_content"
+	              android:layout_height="wrap_content"
+	              android:text="SD Card" />
+	          <RadioButton
+	              android:id="@+id/radio_phone"
+	              android:layout_width="wrap_content"
+	              android:layout_height="wrap_content"
+  	              android:text="Phone" />
+	      </RadioGroup>
+          
+          <TextView
+		      android:id="@+id/textView_timer"
+		      android:layout_width="wrap_content"
+		      android:layout_height="wrap_content"
+              android:layout_toRightOf="@+id/textView_rec"
+		      android:textColor="#FF0000" />
+
+          <TextView
+              android:id="@+id/textView_rec"
+              android:layout_width="30dp"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="5dp"
+              android:textColor="#FF0000" />
+ 
+</RelativeLayout>
