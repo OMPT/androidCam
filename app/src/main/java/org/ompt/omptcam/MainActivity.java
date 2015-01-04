@@ -42,7 +42,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.view.MotionEvent;
 
-import com.trihedraltutoring.campreview.R;
+import org.ompt.omptcam.R;
 
 public class MainActivity extends Activity {
     Camera cam1;
@@ -105,14 +105,13 @@ public class MainActivity extends Activity {
         //vidPath = new File(Environment.getExternalStorageDirectory().getPath(), "OMPT Cam");
         vidPath = new File(Environment.getExternalStoragePublicDirectory(
                 Environment.DIRECTORY_DCIM), "OMPT Cam");
-
         vidPath.mkdirs();
 
         handler = new Handler();
         prepareCamera();
         prepareBtConnection();
         btManager.startBluetoothSco();  // default to BT if available
-        // Create our Preview view and set it as the content of our activity.
+        // Create Preview view and set it as the content of activity //
         camView = new CameraPreview(this, cam1, currentCam, params, camProfile);
         FrameLayout frameLayout = (FrameLayout) findViewById(R.id.camera_preview);
         frameLayout.addView(camView);
@@ -354,7 +353,7 @@ public class MainActivity extends Activity {
         }
         else {
             if (Build.VERSION.SDK_INT >= 19){
-                setViewVisibility(R.id.radiogroup_settings, 1); ; // show storage settings
+                setViewVisibility(R.id.radiogroup_settings, 1); // show storage settings
             }
             else{
                 setViewVisibility(R.id.button_storage, 1); // show settings link
@@ -455,7 +454,7 @@ public class MainActivity extends Activity {
         @Override
         public void run() {
             Log.d("INFO", "Checking for BT");
-            if (btConnected == true && scoState == 0){
+            if (btConnected && scoState == 0){
                 btManager.startBluetoothSco();
             }
             else
@@ -524,7 +523,7 @@ public class MainActivity extends Activity {
     /*****************************************************************************/
     //// Register BT headset as audio receiver ////
     @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
-    @SuppressWarnings("deprecation")
+
     public void  prepareBtConnection(){
         // Setup bluetooth audio manager //
         btManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);

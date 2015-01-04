@@ -9,7 +9,7 @@ import android.util.Log;
 import android.view.*;
 
 /** A basic Camera preview class */
-@SuppressLint("ViewConstructor")
+
 public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback {
     private SurfaceHolder mHolder;
     private static Camera mCamera;
@@ -18,7 +18,10 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
     CamcorderProfile camProfile;
     static Activity activity;
 
-    @SuppressWarnings("deprecation")
+    public CameraPreview(Context con) {
+        super(con);
+    }
+
     public CameraPreview(Context con, Camera cam, int camID, Camera.Parameters p, CamcorderProfile cp) {
         super(con);
         mCamera = cam;
