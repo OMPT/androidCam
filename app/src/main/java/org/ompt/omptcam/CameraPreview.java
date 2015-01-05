@@ -39,22 +39,24 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
 
     public void surfaceCreated(SurfaceHolder holder) {
         // The Surface has been created, now tell the camera where to draw the preview.
+        Log.d("DATA", "surfaceCreated");
         try {
             mCamera.setPreviewDisplay(holder);
             mCamera.startPreview();
         } catch (IOException e) {
-            Log.d("ERROR", "Error setting camera preview: " + e.getMessage());
+            Log.e("ERROR", "Error setting camera preview: " + e.getMessage());
         }
     }
 
-
     public void surfaceDestroyed(SurfaceHolder holder) {
         // empty.  Take care of releasing the Camera preview in your activity.
+        Log.d("DATA", "surfaceDestroyed");
     }
 
     public void surfaceChanged(SurfaceHolder holder, int format, int w, int h) {
         // If your preview can change or rotate, take care of those events here.
         // Make sure to stop the preview before resizing or reformatting it.
+        Log.d("DATA", "surfaceChanged");
 
         if (mHolder.getSurface() == null){
             // preview surface does not exist
@@ -79,7 +81,7 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
             mCamera.startPreview();
 
         } catch (Exception e){
-            Log.d("ERROR", "Error starting camera preview: " + e.getMessage());
+            Log.e("ERROR", "Error starting camera preview: " + e.getMessage());
         }
     }
 

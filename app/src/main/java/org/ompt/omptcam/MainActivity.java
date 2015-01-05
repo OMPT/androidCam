@@ -84,6 +84,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onPause() {
         super.onPause();
+        Log.d("DATA", "onPause");
         releaseMediaRecorder();
         releaseCamera();
         btManager.stopBluetoothSco();
@@ -93,6 +94,7 @@ public class MainActivity extends Activity {
     }
     protected void onResume () {
         super.onResume();
+        Log.d("DATA", "onResume");
         if (isPaused) initialize();
     }
     private void initialize(){
@@ -132,14 +134,14 @@ public class MainActivity extends Activity {
             @Override
             public void onOrientationChanged(int angle){
 
-                Log.d("INFO", "Angle: " + angle);
+                //Log.d("INFO", "Angle: " + angle);
                 if (angle >= 45 && angle <= 315){
                     if (angle >= 45 && oldAngle < 45) {
-                        Log.d("INFO", "Reverse Landscape Mode");
+                        //Log.d("INFO", "Reverse Landscape Mode");
                         inLandscape = false;
                     }
                     else if (angle <= 315 && oldAngle > 315){
-                        Log.d("INFO", "Landscape Mode");
+                        //Log.d("INFO", "Landscape Mode");
                         inLandscape = true;
                     }
                     /**
